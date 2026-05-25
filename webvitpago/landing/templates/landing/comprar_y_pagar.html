@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VITPAGO - Tu poder financiero. La billetera digital y pasarela de pago más segura, rápida y conveniente. Compra, paga y transfiere al instante.">
+    <meta name="keywords" content="vitpago, billetera digital, pagos online, pagoefectivo, cip, transferencias, fintech peru">
+    <meta name="author" content="VITPAGO">
+    <title>VITPAGO | Tu Poder Financiero - Comprar y Pagar</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    
+
+    <!-- Django Static Files -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'landing/css/styles.css' %}">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'landing/images/favicon.ico' %}" type="image/x-icon">
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Left Side: Hamburger menu icon -->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            
+            <!-- Center: Logo -->
+            <a href="{% url 'landing:index' %}" class="nav-logo">
+                <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="48" height="48" rx="12" fill="url(#logo-grad)" />
+                    <rect x="8" y="14" width="32" height="20" rx="4" fill="white" fill-opacity="0.15" stroke="white" stroke-width="2" />
+                    <line x1="8" y1="20" x2="40" y2="20" stroke="white" stroke-width="2" />
+                    <rect x="12" y="24" width="6" height="4" rx="1" fill="white" />
+                    <path d="M28 22V25.5C28 27.96 26.31 30.2 24 31C21.69 30.2 20 27.96 20 25.5V22H24H28Z" fill="#F4C025" stroke="white" stroke-width="1.5" stroke-linejoin="round" />
+                    <defs>
+                        <linearGradient id="logo-grad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#D68630" />
+                            <stop offset="1" stop-color="#F4C025" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="logo-text">
+                    <span class="brand-name">VIT<span>PAGO</span></span>
+                    <span class="brand-tagline">TU PODER FINANCIERO</span>
+                </div>
+            </a>
+            
+            <!-- Right Side: Contacto Button -->
+            <a href="{% url 'landing:contacto' %}" class="btn btn-primary btn-nav">Contacto</a>
+        </div>
+    </nav>
+    
+    <!-- LEFT SIDE MOBILE/DESKTOP DRAWER (matches Page 2 of PDF) -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-header">
+            <h3>Menú</h3>
+            <button class="close-drawer" id="close-drawer" aria-label="Cerrar menú">&times;</button>
+        </div>
+        <ul class="drawer-menu">
+            <li>
+                <a href="{% url 'landing:comprar_y_pagar' %}" class="drawer-link">
+                    <span>Comprar y pagar</span>
+                    <span class="arrow-right">›</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'landing:para_tu_empresa' %}" class="drawer-link">
+                    <span>Para tu empresa</span>
+                    <span class="arrow-right">›</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'landing:comprar_y_pagar' %}#faqs" class="drawer-link">
+                    <span>Asistencia</span>
+                    <span class="arrow-right">›</span>
+                </a>
+            </li>
+            <li class="contacto-item">
+                <a href="{% url 'landing:contacto' %}" class="drawer-link contacto-text-link">Contacto</a>
+            </li>
+        </ul>
+    </div>
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+
+    <!-- SECTION 8: HOW IT WORKS ICONS (matches Page 4) -->
+    <section class="how-icons-section" style="padding-top: 9rem;">
+        <div class="container">
+            <h2 class="orange-title-center-pdf text-center">¡MIRA CÓMO FUNCIONA VITPAGO!</h2>
+            
+            <div class="grid-three-col-icons">
+                <!-- Icon 1 -->
+                <div class="icon-flow-card">
+                    <div class="flow-icon-circle bg-blue-icon">🛒</div>
+                    <p>Realiza tu compra en línea en las tiendas afiliadas.</p>
+                </div>
+                
+                <!-- Icon 2 -->
+                <div class="icon-flow-card">
+                    <div class="flow-icon-circle bg-blue-icon">📝</div>
+                    <p>Elige PagoEfectivo como medio de pago.</p>
+                </div>
+                
+                <!-- Icon 3 -->
+                <div class="icon-flow-card">
+                    <div class="flow-icon-circle bg-blue-icon-flat">123456789</div>
+                    <p>Obtén tu Código de pago CIP y págalo desde tu billetera digital, banca móvil o agentes y agencias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: CENTROS DE PAGO BRANDS GRID (matches Page 4) -->
+    <section class="payment-centers-section-pdf" id="centros-pago">
+        <div class="container">
+            <h2 class="orange-title-center-pdf text-center">CENTROS DE PAGO</h2>
+            <p class="section-desc-center text-center">
+                Acércate al punto de pago más cercano o ingresa a "Pago de Servicios" desde tu billetera móvil.
+            </p>
+            
+            <!-- Real-time Filter & Search -->
+            <div class="filter-container">
+                <div class="search-box-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="payment-search" placeholder="Busca tu banco, caja o agente preferido...">
+                </div>
+                
+                <div class="category-tabs">
+                    <button class="filter-btn active" data-category="todos">Todos</button>
+                    <button class="filter-btn" data-category="bancos">Bancos</button>
+                    <button class="filter-btn" data-category="cajas">Cajas de Ahorro</button>
+                    <button class="filter-btn" data-category="agentes">Agentes</button>
+                </div>
+            </div>
+            
+            <div class="payment-grid-pdf" id="payment-grid">
+                <!-- Banks -->
+                <div class="payment-card-pdf" data-name="bbva" data-category="bancos">
+                    <div class="logo-box-pdf logo-bbva">BBVA</div>
+                </div>
+                <div class="payment-card-pdf" data-name="bcp banco de credito del peru" data-category="bancos">
+                    <div class="logo-box-pdf logo-bcp">BCP</div>
+                </div>
+                <div class="payment-card-pdf" data-name="interbank" data-category="bancos">
+                    <div class="logo-box-pdf logo-interbank">Interbank</div>
+                </div>
+                <div class="payment-card-pdf" data-name="scotiabank" data-category="bancos">
+                    <div class="logo-box-pdf logo-scotia">Scotiabank</div>
+                </div>
+                <div class="payment-card-pdf" data-name="banbif" data-category="bancos">
+                    <div class="logo-box-pdf logo-banbif">BanBif</div>
+                </div>
+                <div class="payment-card-pdf" data-name="banco pichincha" data-category="bancos">
+                    <div class="logo-box-pdf logo-pichincha">Pichincha</div>
+                </div>
+                
+                <!-- Cajas -->
+                <div class="payment-card-pdf" data-name="caja arequipa" data-category="cajas">
+                    <div class="logo-box-pdf logo-arequipa">Caja Arequipa</div>
+                </div>
+                <div class="payment-card-pdf" data-name="caja piura" data-category="cajas">
+                    <div class="logo-box-pdf logo-piura">Caja Piura</div>
+                </div>
+                <div class="payment-card-pdf" data-name="caja trujillo" data-category="cajas">
+                    <div class="logo-box-pdf logo-trujillo">Caja Trujillo</div>
+                </div>
+                <div class="payment-card-pdf" data-name="caja los andes" data-category="cajas">
+                    <div class="logo-box-pdf logo-andes">Caja Los Andes</div>
+                </div>
+                <div class="payment-card-pdf" data-name="caja paita" data-category="cajas">
+                    <div class="logo-box-pdf logo-paita">Caja Paita</div>
+                </div>
+                
+                <!-- Agents -->
+                <div class="payment-card-pdf" data-name="western union westernunion" data-category="agentes">
+                    <div class="logo-box-pdf logo-wu">Western Union</div>
+                </div>
+                <div class="payment-card-pdf" data-name="tambo tambomarket" data-category="agentes">
+                    <div class="logo-box-pdf logo-tambo">Tambo</div>
+                </div>
+                <div class="payment-card-pdf" data-name="kasnet" data-category="agentes">
+                    <div class="logo-box-pdf logo-kasnet">KasNet</div>
+                </div>
+                <div class="payment-card-pdf" data-name="niubiz" data-category="agentes">
+                    <div class="logo-box-pdf logo-niubiz">Niubiz</div>
+                </div>
+                <div class="payment-card-pdf" data-name="moneygram" data-category="agentes">
+                    <div class="logo-box-pdf logo-mg">MoneyGram</div>
+                </div>
+            </div>
+            
+            <div class="empty-state-search" id="empty-state-search">
+                <span class="empty-icon">🔍</span>
+                <h4>No se encontraron centros de pago</h4>
+                <p>Prueba buscando con otros términos como "BCP", "Kasnet" o "Caja".</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 10: PHYSICAL STEPS (matches Page 4) -->
+    <section class="physical-steps-section">
+        <div class="container">
+            <h2 class="orange-title-center-pdf text-center">¿CÓMO PAGAR CON VITPAGO EN PUNTOS FÍSICOS?</h2>
+            
+            <div class="grid-three-col-steps">
+                <!-- Step 1 -->
+                <div class="physical-step-card">
+                    <div class="p-step-image">
+                        <span class="p-step-emoji">🏪🏷️</span>
+                    </div>
+                    <div class="p-step-info">
+                        <h3>1. Indica que realizarás un pago a la Institución VITPAGO.</h3>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="physical-step-card">
+                    <div class="p-step-image">
+                        <span class="p-step-emoji">💵📱</span>
+                    </div>
+                    <div class="p-step-info">
+                        <h3>2. Presenta tu código de pago CIP y realiza el pago.</h3>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="physical-step-card">
+                    <div class="p-step-image">
+                        <span class="p-step-emoji">👩‍💼🧾</span>
+                    </div>
+                    <div class="p-step-info">
+                        <h3>3. Verifica tu comprobante de pago y disfruta tu compra.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQS ACCORDION (Asistencia / Soporte) -->
+    <section class="faqs-section-pdf" id="faqs">
+        <div class="container faq-container">
+            <h2 class="orange-title-center-pdf text-center">Preguntas Frecuentes</h2>
+            
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Qué es un código CIP y para qué sirve?</span>
+                        <span class="faq-arrow">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            El código CIP (Código de Pago) es una clave única de 8 dígitos generada al comprar por internet. Te permite pagar en efectivo o transferencia mediante la red bancaria y de agentes autorizados de VITPAGO, sin tarjetas de crédito en internet.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cuánto tiempo tengo para pagar mi código de pago CIP?</span>
+                        <span class="faq-arrow">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            El tiempo límite de validez del código CIP varía entre 12 y 48 horas, según la tienda. Expirado el plazo, el código se anula y debes realizar una nueva orden de compra.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cobran comisiones adicionales por realizar el pago en ventanilla?</span>
+                        <span class="faq-arrow">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>
+                            VITPAGO no cobra ninguna comisión adicional al usuario final. Sin embargo, tu entidad bancaria podría aplicar algún cargo por transferencias interbancarias.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Light gray/white background - matches PDF footer) -->
+    <footer class="footer-section-pdf">
+        <div class="container footer-grid-pdf">
+            <div class="footer-col-pdf">
+                <h3>Síguenos</h3>
+                <div class="social-row-pdf">
+                    <a href="#" class="social-circle-pdf">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-circle-pdf">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-circle-pdf">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                    <a href="#" class="social-circle-pdf">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-col-pdf">
+                <ul class="footer-links-pdf">
+                    <li><a href="{% url 'landing:comprar_y_pagar' %}#faqs">Preguntas frecuentes</a></li>
+                    <li><a href="#">Políticas de privacidad</a></li>
+                    <li><a href="#">Políticas de cookies</a></li>
+                    <li><a href="#">Declaración sobre la Ley de Esclavitud Moderna</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col-pdf">
+                <ul class="footer-links-pdf">
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Central de Ayuda</a></li>
+                    <li><a href="#">Transparencia</a></li>
+                    <li><a href="#">Libro de reclamaciones</a></li>
+                </ul>
+                <div class="libro-reclamaciones-row-pdf">
+                    <a href="#" class="reclamaciones-link-pdf">
+                        <span class="book-emoji">📖</span>
+                        <span>LIBRO DE RECLAMACIONES</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-col-pdf">
+                <ul class="footer-links-pdf">
+                    <li><a href="{% url 'landing:para_tu_empresa' %}">Integra tu tienda</a></li>
+                    <li><a href="#">Acceso a Empresas</a></li>
+                    <li><a href="#">Canal Ético</a></li>
+                </ul>
+                
+                <div class="qr-download-row-pdf">
+                    <div class="qr-square-pdf">
+                        🏁
+                    </div>
+                    <div class="app-store-tiny-links">
+                        <a href="#" class="tiny-store-badge">App Store</a>
+                        <a href="#" class="tiny-store-badge">Google Play</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom-pdf text-center">
+            <p>&copy; 2026 VITPAGO. Todos los derechos reservados. Marca de PagoEfectivo.</p>
+        </div>
+    </footer>
+
+    <!-- CHAT ASSISTANT FLOATING BUTTON -->
+    <div class="chat-widget" id="chat-widget">
+        <button class="chat-toggle-btn" id="chat-toggle-btn" aria-label="Abrir asistente de chat">
+            💬
+            <span class="unread-dot"></span>
+        </button>
+        
+        <div class="chat-panel" id="chat-panel">
+            <div class="chat-header">
+                <div class="agent-avatar">V</div>
+                <div class="agent-status">
+                    <h4>Asistente VITPAGO</h4>
+                    <p>● En línea ahora</p>
+                </div>
+                <button class="close-chat" id="close-chat">&times;</button>
+            </div>
+            
+            <div class="chat-body" id="chat-body">
+                <div class="msg msg-received">
+                    <p>¡Hola! 👋 Bienvenido a VITPAGO. ¿Cómo puedo ayudarte hoy con tu pago o integración?</p>
+                    <span class="msg-time">12:21 PM</span>
+                </div>
+            </div>
+            
+            <div class="chat-footer">
+                <input type="text" id="chat-input" placeholder="Escribe tu mensaje aquí...">
+                <button id="chat-send" aria-label="Enviar mensaje">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Django Static JS -->
+    <script src="{% static 'landing/js/main.js' %}"></script>
+</body>
+</html>
