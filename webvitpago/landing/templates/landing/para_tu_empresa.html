@@ -26,6 +26,25 @@
 
     <!-- NAV BAR -->
     <nav class="navbar" id="navbar">
+
+        <!-- 🔥 AQUÍ VA EL HUMO -->
+        <div class="vitpago-smoke-bg">
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+        </div>
+   
+
         <div class="nav-container">
             <!-- Left Side: Hamburger menu icon -->
             <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
@@ -120,28 +139,45 @@
             <h2 class="orange-title-center-pdf text-center">¿CÓMO CREAR UNA CUENTA EN LA BILLETERA VITPAGO?</h2>
             
             <div class="grid-three-col-steps">
-                <!-- Step 1 Phone -->
+                <!-- Step 1 -->
                 <div class="step-phone-card">
+
                     <div class="mockup-phone phone-simulator-card">
+
+                        <div class="side-button"></div>
+
                         <div class="phone-speaker"></div>
+
                         <div class="phone-screen phone-bg-yellow">
+
                             <div class="sim-playstore-view">
                                 <div class="playstore-icon-box">V</div>
                                 <h4>VITPAGO</h4>
                                 <span class="badge-install-pdf">Instalar</span>
                             </div>
+
                         </div>
+
                     </div>
+
                     <div class="step-info-under">
                         <h3>1. Descárgala</h3>
                         <p>Instala la aplicación desde Play Store o App Store.</p>
                     </div>
+
                 </div>
                 
                 <!-- Step 2 Phone -->
                 <div class="step-phone-card">
                     <div class="mockup-phone phone-simulator-card">
+
+                        <!-- BOTÓN LATERAL -->
+                        <div class="side-button"></div>
+
+                        <!-- SPEAKER -->
                         <div class="phone-speaker"></div>
+
+                        <!-- PANTALLA -->
                         <div class="phone-screen phone-bg-yellow">
                             <div class="sim-register-view">
                                 <h5>Crea tu cuenta</h5>
@@ -157,24 +193,34 @@
                 </div>
                 
                 <!-- Step 3 Phone -->
+                <!-- Step 3 -->
                 <div class="step-phone-card">
+
                     <div class="mockup-phone phone-simulator-card">
+
+                        <div class="side-button"></div>
+
                         <div class="phone-speaker"></div>
+
                         <div class="phone-screen phone-bg-yellow">
+
                             <div class="sim-verify-view">
                                 <h5>Valida tu identidad</h5>
                                 <span class="doc-icon-small">🪪</span>
                                 <span class="btn-dummy-next">Verificar</span>
                             </div>
+
                         </div>
+
                     </div>
+
                     <div class="step-info-under">
                         <h3>3. Verifica</h3>
                         <p>Envía los documentos necesarios para verificar tu identidad.</p>
                     </div>
+
                 </div>
             </div>
-            
             <div class="text-center mt-5">
                 <a href="{% url 'landing:comprar_y_pagar' %}" class="btn btn-primary-pdf">Descarga nuestra App</a>
             </div>
@@ -264,13 +310,20 @@
                     <li><a href="#">Canal Ético</a></li>
                 </ul>
                 
-                <div class="qr-download-row-pdf">
-                    <div class="qr-square-pdf">
-                        🏁
-                    </div>
-                    <div class="app-store-tiny-links">
-                        <a href="#" class="tiny-store-badge">App Store</a>
-                        <a href="#" class="tiny-store-badge">Google Play</a>
+                    <div class="tiny-store-badges">
+
+                        <a href="#" class="tiny-store-badge">
+                            <img src="/static/landing/images/appstore.png"
+                                alt="App Store"
+                                class="tiny-store-img app-store-mini">
+                        </a>
+
+                        <a href="#" class="tiny-store-badge">
+                            <img src="/static/landing/images/googleplay.png"
+                                alt="Google Play"
+                                class="tiny-store-img google-play-mini">
+                        </a>
+
                     </div>
                 </div>
             </div>

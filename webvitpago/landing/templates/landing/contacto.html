@@ -26,6 +26,26 @@
 
     <!-- NAV BAR -->
     <nav class="navbar" id="navbar">
+
+
+        <!-- 🔥 AQUÍ VA EL HUMO -->
+        <div class="vitpago-smoke-bg">
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+            <span>VITPAGO</span>
+        </div>
+
+
         <div class="nav-container">
             <!-- Left Side: Hamburger menu icon -->
             <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
@@ -94,124 +114,146 @@
 
     <!-- CONTACT HERO BAND (Orange - matches Page 5 top) -->
     <section class="contacto-hero-band">
-        <div class="contacto-hero-inner">
-            <h1 class="contacto-hero-title">PONTE EN CONTACTO CON<br>EL EQUIPO DE VITPAGO</h1>
-            <p class="contacto-hero-desc">
-                ¿Tienes preguntas sobre integración, pagos o nuestros servicios? Nuestro equipo especializado está listo para ayudarte.
-            </p>
-        </div>
-    </section>
+
+    <div class="smoke-orbs"></div>
+
+    <div class="contacto-hero-inner">
+        <h1 class="contacto-hero-title">
+            PONTE EN CONTACTO CON<br>
+            EL EQUIPO DE VITPAGO
+        </h1>
+
+        <p class="contacto-hero-desc">
+            ¿Tienes preguntas sobre integración, pagos o nuestros servicios?
+            Nuestro equipo especializado está listo para ayudarte.
+        </p>
+    </div>
+
+</section>
 
     <!-- CONTACT FORM SECTION (matches Page 5) -->
+     
     <section class="contact-section-pdf" id="contacto">
-        <div class="container contact-narrow-pdf">
-            <div class="contact-form-card-pdf">
-                <!-- Form header row -->
-                <div class="form-section-header">
-                    <div class="form-header-icon">✉️</div>
-                    <div>
-                        <h2 class="form-main-title">Envíanos un mensaje</h2>
-                        <p class="form-main-subtitle">Te responderemos lo antes posible, normalmente en menos de 24 horas.</p>
-                    </div>
-                </div>
+       
+       
+        <div class="rain-background-layer">
+            <div class="rain-pdf"></div>
+        </div>
 
-                <form id="landing-contact-form" action="{% url 'landing:contact_submit' %}" method="POST">
-                    {% csrf_token %}
-                    
-                    <!-- Two-column row for name and phone -->
-                    <div class="form-row-two-col">
-                        <div class="form-group-pdf">
-                            <label class="form-label-pdf" for="nombre">Nombre y Apellidos *</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan García" required>
-                        </div>
-                        <div class="form-group-pdf">
-                            <label class="form-label-pdf" for="telefono">Teléfono *</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="Ej: +51 987 654 321" required>
+        
+
+            <div class="container contact-narrow-pdf">
+                <div class="contact-form-card-pdf">
+                    <!-- Form header row -->
+                    <div class="form-section-header">
+                        <div class="form-header-icon">✉️</div>
+                        <div>
+                            <h2 class="form-main-title">Envíanos un mensaje</h2>
+                            <p class="form-main-subtitle">Te responderemos lo antes posible, normalmente en menos de 24 horas.</p>
                         </div>
                     </div>
-                    
-                    <div class="form-group-pdf">
-                        <label class="form-label-pdf" for="email">Correo Electrónico *</label>
-                        <input type="email" id="email" name="email" placeholder="Ej: usuario@correo.com" required>
-                    </div>
-                    
-                    <div class="form-group-pdf">
-                        <label class="form-label-pdf" for="mensaje">Mensaje *</label>
-                        <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos tu consulta, duda o propuesta de integración..." required rows="5"></textarea>
-                    </div>
-                    
-                    <!-- Checkboxes (match Page 5 of PDF) -->
-                    <div class="checkbox-group-pdf">
-                        <label class="checkbox-label-pdf">
-                            <input type="checkbox" name="terminos" required>
-                            <span class="checkmark-box"></span>
-                            <span class="checkbox-text-pdf">Acepto los <a href="#" class="form-link-pdf">Términos y Condiciones</a> de PagoEfectivo. *</span>
-                        </label>
-                    </div>
-                    
-                    <div class="checkbox-group-pdf">
-                        <label class="checkbox-label-pdf">
-                            <input type="checkbox" name="privacidad" required>
-                            <span class="checkmark-box"></span>
-                            <span class="checkbox-text-pdf">Acepto las <a href="#" class="form-link-pdf">Políticas de Privacidad</a> de PagoEfectivo. *</span>
-                        </label>
-                    </div>
-                    
-                    <!-- reCAPTCHA Mockup (matches Page 5 exactly) -->
-                    <div class="recaptcha-frame-pdf">
-                        <div class="recaptcha-left-pdf">
-                            <label class="checkbox-label-pdf recaptcha-check-label">
-                                <input type="checkbox" id="captcha-check" required>
+
+                    <form id="landing-contact-form" action="{% url 'landing:contact_submit' %}" method="POST">
+                        {% csrf_token %}
+                        
+                        <!-- Two-column row for name and phone -->
+                        <div class="form-row-two-col">
+                            <div class="form-group-pdf">
+                                <label class="form-label-pdf" for="nombre">Nombre y Apellidos *</label>
+                                <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan García" required>
+                            </div>
+                            <div class="form-group-pdf">
+                                <label class="form-label-pdf" for="telefono">Teléfono *</label>
+                                <input type="tel" id="telefono" name="telefono" placeholder="Ej: +51 987 654 321" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-pdf">
+                            <label class="form-label-pdf" for="email">Correo Electrónico *</label>
+                            <input type="email" id="email" name="email" placeholder="Ej: usuario@correo.com" required>
+                        </div>
+                        
+                        <div class="form-group-pdf">
+                            <label class="form-label-pdf" for="mensaje">Mensaje *</label>
+                            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos tu consulta, duda o propuesta de integración..." required rows="5"></textarea>
+                        </div>
+                        
+                        <!-- Checkboxes (match Page 5 of PDF) -->
+                        <div class="checkbox-group-pdf">
+                            <label class="checkbox-label-pdf">
+                                <input type="checkbox" name="terminos" required>
                                 <span class="checkmark-box"></span>
-                                <span class="checkbox-text-pdf">No soy un robot</span>
+                                <span class="checkbox-text-pdf">Acepto los <a href="#" class="form-link-pdf">Términos y Condiciones</a> de PagoEfectivo. *</span>
                             </label>
                         </div>
-                        <div class="recaptcha-right-pdf">
-                            <div class="recaptcha-logo-icon">🔁</div>
-                            <span class="recaptcha-label-text">reCAPTCHA</span>
-                            <span class="recaptcha-sub">Privacidad · Términos</span>
+                        
+                        <div class="checkbox-group-pdf">
+                            <label class="checkbox-label-pdf">
+                                <input type="checkbox" name="privacidad" required>
+                                <span class="checkmark-box"></span>
+                                <span class="checkbox-text-pdf">Acepto las <a href="#" class="form-link-pdf">Políticas de Privacidad</a> de PagoEfectivo. *</span>
+                            </label>
+                        </div>
+                        
+                        <!-- reCAPTCHA Mockup (matches Page 5 exactly) -->
+                        <div class="recaptcha-frame-pdf">
+                            <div class="recaptcha-left-pdf">
+                                <label class="checkbox-label-pdf recaptcha-check-label">
+                                    <input type="checkbox" id="captcha-check" required>
+                                    <span class="checkmark-box"></span>
+                                    <span class="checkbox-text-pdf">No soy un robot</span>
+                                </label>
+                            </div>
+                            <div class="recaptcha-right-pdf">
+                                <div class="recaptcha-logo-icon">🔁</div>
+                                <span class="recaptcha-label-text">reCAPTCHA</span>
+                                <span class="recaptcha-sub">Privacidad · Términos</span>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-submit-pdf w-full" id="btn-submit-form">
+                            <span class="btn-text">Enviar mensaje</span>
+                            <span class="btn-spinner hidden"></span>
+                        </button>
+                    </form>
+                    
+                    <!-- AJAX Feedback -->
+                    <div class="form-feedback hidden" id="form-feedback">
+                        <span class="feedback-icon">✓</span>
+                        <p class="feedback-text"></p>
+                    </div>
+                </div>
+
+                <!-- Contact info cards below (matches Page 5) -->
+                <div class="contact-info-cards-grid">
+                    <div class="contact-info-card">
+                        <span class="contact-info-icon">📍</span>
+                        <div>
+                            <h4>Oficinas</h4>
+                            <p>Av. Larco 1247, Miraflores, Lima - Perú</p>
                         </div>
                     </div>
-                    
-                    <button type="submit" class="btn btn-submit-pdf w-full" id="btn-submit-form">
-                        <span class="btn-text">Enviar mensaje</span>
-                        <span class="btn-spinner hidden"></span>
-                    </button>
-                </form>
-                
-                <!-- AJAX Feedback -->
-                <div class="form-feedback hidden" id="form-feedback">
-                    <span class="feedback-icon">✓</span>
-                    <p class="feedback-text"></p>
-                </div>
-            </div>
-
-            <!-- Contact info cards below (matches Page 5) -->
-            <div class="contact-info-cards-grid">
-                <div class="contact-info-card">
-                    <span class="contact-info-icon">📍</span>
-                    <div>
-                        <h4>Oficinas</h4>
-                        <p>Av. Larco 1247, Miraflores, Lima - Perú</p>
+                    <div class="contact-info-card">
+                        <span class="contact-info-icon">✉️</span>
+                        <div>
+                            <h4>Email de soporte</h4>
+                            <p>soporte@vitpago.com</p>
+                        </div>
                     </div>
-                </div>
-                <div class="contact-info-card">
-                    <span class="contact-info-icon">✉️</span>
-                    <div>
-                        <h4>Email de soporte</h4>
-                        <p>soporte@vitpago.com</p>
-                    </div>
-                </div>
-                <div class="contact-info-card">
-                    <span class="contact-info-icon">📞</span>
-                    <div>
-                        <h4>Teléfono</h4>
-                        <p>(+511) 604-3920</p>
+                    <div class="contact-info-card">
+                        <span class="contact-info-icon">📞</span>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>(+511) 604-3920</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+      
+        
     </section>
+
+    
 
     <!-- FOOTER -->
     <footer class="footer-section-pdf">
@@ -265,11 +307,20 @@
                     <li><a href="#">Canal Ético</a></li>
                 </ul>
                 
-                <div class="qr-download-row-pdf">
-                    <div class="qr-square-pdf">🏁</div>
-                    <div class="app-store-tiny-links">
-                        <a href="#" class="tiny-store-badge">App Store</a>
-                        <a href="#" class="tiny-store-badge">Google Play</a>
+                    <div class="tiny-store-badges">
+
+                        <a href="#" class="tiny-store-badge">
+                            <img src="/static/landing/images/appstore.png"
+                                alt="App Store"
+                                class="tiny-store-img app-store-mini">
+                        </a>
+
+                        <a href="#" class="tiny-store-badge">
+                            <img src="/static/landing/images/googleplay.png"
+                                alt="Google Play"
+                                class="tiny-store-img google-play-mini">
+                        </a>
+
                     </div>
                 </div>
             </div>
