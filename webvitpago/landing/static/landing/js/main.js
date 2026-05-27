@@ -88,11 +88,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Debounce helper to optimize search input performance
+    const debounce = (func, delay) => {
+        let timeoutId;
+        return (...args) => {
+            if (timeoutId) clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                func(...args);
+            }, delay);
+        };
+    };
+
     if (searchInput) {
-        searchInput.addEventListener('input', (e) => {
+        searchInput.addEventListener('input', debounce((e) => {
             searchQuery = normalizeText(e.target.value);
             filterPaymentCenters();
-        });
+        }, 150));
     }
 
     filterBtns.forEach(btn => {

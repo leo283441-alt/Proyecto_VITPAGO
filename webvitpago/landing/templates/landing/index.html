@@ -1,113 +1,28 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="VITPAGO - Tu poder financiero. La billetera digital y pasarela de pago más segura, rápida y conveniente. Compra, paga y transfiere al instante.">
-    <meta name="keywords" content="vitpago, billetera digital, pagos online, pagoefectivo, cip, transferencias, fintech peru">
-    <meta name="author" content="VITPAGO">
-    <title>VITPAGO | Tu Poder Financiero - Inicio</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+{% extends "landing/base.html" %}
+{% load static %}
 
-    <!-- Django Static Files -->
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'landing/css/styles.css' %}">
-    
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="{% static 'landing/images/favicon.ico' %}" type="image/x-icon">
-</head>
-<body>
+{% block title %}VITPAGO | Tu Poder Financiero - Inicio{% endblock %}
 
-    <!-- NAV BAR -->
-    <nav class="navbar" id="navbar">
+{% block drawer_menu %}
+<li>
+    <a href="{% url 'landing:comprar_y_pagar' %}" class="drawer-link">
+        <span>Comprar y pagar</span>
+        <span class="arrow-right">›</span>
+    </a>
+</li>
+<li>
+    <a href="{% url 'landing:para_tu_empresa' %}" class="drawer-link">
+        <span>Para tu empresa</span>
+        <span class="arrow-right">›</span>
+    </a>
+</li>
+<li class="contacto-item">
+    <a href="{% url 'landing:contacto' %}" class="drawer-link contacto-text-link">Contacto</a>
+</li>
+{% endblock %}
 
-
-        <!-- 🔥 AQUÍ VA EL HUMO -->
-        <div class="vitpago-smoke-bg">
-            <span>VITPAGO</span>
-            <span>VITPAGO</span>
-            <span>VITPAGO</span>
-            <span>VITPAGO</span>
-            <span>VITPAGO</span>
-            <span>VITPAGO</span>
-            <span>VITPAGO</span>
-            <span>VITPAGO</span>
-            <span>VITPAGO</span>
-            <span>VITPAGO</span>
-            <span>VITPAGO</span>
-            <span>VITPAGO</span>
-            <span>VITPAGO</span>
-        </div>
-
-
-
-        <div class="nav-container">
-            <!-- Left Side: Hamburger menu icon -->
-            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            
-            <!-- Center: Logo -->
-            <a href="{% url 'landing:index' %}" class="nav-logo">
-                <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="48" height="48" rx="12" fill="url(#logo-grad)" />
-                    <rect x="8" y="14" width="32" height="20" rx="4" fill="white" fill-opacity="0.15" stroke="white" stroke-width="2" />
-                    <line x1="8" y1="20" x2="40" y2="20" stroke="white" stroke-width="2" />
-                    <rect x="12" y="24" width="6" height="4" rx="1" fill="white" />
-                    <path d="M28 22V25.5C28 27.96 26.31 30.2 24 31C21.69 30.2 20 27.96 20 25.5V22H24H28Z" fill="#F4C025" stroke="white" stroke-width="1.5" stroke-linejoin="round" />
-                    <defs>
-                        <linearGradient id="logo-grad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#D68630" />
-                            <stop offset="1" stop-color="#F4C025" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <div class="logo-text">
-                    <span class="brand-name">VIT<span>PAGO</span></span>
-                    <span class="brand-tagline">TU PODER FINANCIERO</span>
-                </div>
-            </a>
-            
-            <!-- Right Side: Contacto Button -->
-            <a href="{% url 'landing:contacto' %}" class="btn btn-primary btn-nav">Contacto</a>
-        </div>
-    </nav>
-    
-    <!-- LEFT SIDE MOBILE/DESKTOP DRAWER (matches Page 2 of PDF) -->
-    <div class="mobile-drawer" id="mobile-drawer">
-        <div class="drawer-header">
-            <h3>Menú</h3>
-            <button class="close-drawer" id="close-drawer" aria-label="Cerrar menú">&times;</button>
-        </div>
-        <ul class="drawer-menu">
-            <li>
-                <a href="{% url 'landing:comprar_y_pagar' %}" class="drawer-link">
-                    <span>Comprar y pagar</span>
-                    <span class="arrow-right">›</span>
-                </a>
-            </li>
-            <li>
-                <a href="{% url 'landing:para_tu_empresa' %}" class="drawer-link">
-                    <span>Para tu empresa</span>
-                    <span class="arrow-right">›</span>
-                </a>
-            </li>
-            <li class="contacto-item">
-                <a href="{% url 'landing:contacto' %}" class="drawer-link contacto-text-link">Contacto</a>
-            </li>
-        </ul>
-    </div>
-    <div class="drawer-overlay" id="drawer-overlay"></div>
-
-    <!-- SECTION 1: HERO (Cap-girl split screen - matches Page 1) -->
+{% block content %}
+    <!-- SECTION 1: HERO (Cap-girl split screen) -->
     <section class="hero-section" id="inicio">
         <div class="hero-grid-split">
             <!-- Left Side: Light grey/white with text -->
@@ -122,21 +37,16 @@
                     <p class="hero-disclaimer-pdf">*Términos y condiciones aplican</p>
                 </div>
             </div>
-            
+
             <!-- Right Side: Dark wave background with Cap-girl holding phone -->
             <div class="hero-right-split">
                 <div class="hero-right-content">
-                    <!-- Outer glows -->
                     <div class="glow-sphere-pdf"></div>
-                    
-                    <!-- Cap-girl holding phone -->
                     <div class="mockup-illustration-container">
                         <div class="girl-illustration-box-pdf">
                             <img src="{% static 'landing/images/woman_cap_phone.png' %}" alt="Mujer con gorra sosteniendo celular" class="hero-image-png">
                         </div>
                     </div>
-                    
-                    <!-- Banners below -->
                     <div class="estamos-contigo-banner">
                         <span class="estamos-pill">ESTAMOS</span>
                         <span class="contigo-text">CONTIGO!</span>
@@ -146,17 +56,14 @@
         </div>
     </section>
 
-    <!-- SECTION 2: RED-HAIR WOMAN (Yellow bg square - matches Page 1) -->
+    <!-- SECTION 2: RED-HAIR WOMAN (Yellow bg square) -->
     <section class="redhair-section">
         <div class="container grid-two-col">
-            <!-- Left side: Yellow square photo mockup -->
             <div class="redhair-visual-wrapper">
                 <div class="yellow-photo-square">
-                    <img src="{% static 'landing/images/woman_smiling_yellow.png' %}" alt="Mujer sonriendo con celular" class="section2-image-png">
+                    <img src="{% static 'landing/images/woman_smiling_yellow.png' %}" alt="Mujer sonriendo con celular" class="section2-image-png" loading="lazy" decoding="async">
                 </div>
             </div>
-            
-            <!-- Right side: Text details -->
             <div class="redhair-content-wrapper">
                 <h1 class="orange-heading-pdf">¡LOREM IPSUM DOLOR SIT AMET CONSECT!</h1>
                 <h3 class="white-subheading-pdf">Lorem ipsum dolor sit</h3>
@@ -168,33 +75,29 @@
         </div>
     </section>
 
-    <!-- SECTION 3: APP DOWNLOAD PHONE IN HAND (matches Page 1) -->
+    <!-- SECTION 3: APP DOWNLOAD PHONE IN HAND -->
     <section class="handphone-section">
         <div class="container grid-two-col reverse-tablet">
-            <!-- Left side: Text -->
             <div class="handphone-content-wrapper">
                 <h1 class="yellow-heading-pdf">DESCARGA LA APP VITPAGO</h1>
                 <p class="gray-desc-pdf">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                 </p>
                 <div class="store-badges-row-pdf">
-
                     <a href="#" class="store-badge-link">
-                        <img src="/static/landing/images/appstore.png"
+                        <img src="{% static 'landing/images/appstore.png' %}"
                             class="store-badge-img"
-                            alt="App Store">
+                            alt="App Store"
+                            loading="lazy" decoding="async">
                     </a>
-
                     <a href="#" class="store-badge-link">
-                        <img src="/static/landing/images/googleplay.png"
+                        <img src="{% static 'landing/images/googleplay.png' %}"
                             class="store-badge-img"
-                            alt="Google Play">
+                            alt="Google Play"
+                            loading="lazy" decoding="async">
                     </a>
-
                 </div>
             </div>
-            
-            <!-- Right side: Hand holding phone representation -->
             <div class="handphone-visual-wrapper">
                 <div class="phone-hand-container-pdf">
                     <div class="mockup-phone phone-medium-pdf">
@@ -210,122 +113,11 @@
         </div>
     </section>
 
-    <!-- SECTION 4: CONTACT ORANGE BAND (matches Page 1) -->
+    <!-- SECTION 4: CONTACT ORANGE BAND -->
     <section class="orange-band-section">
         <div class="container band-flex-pdf">
             <h2>CONTACTA AL EQUIPO DE VITPAGO</h2>
             <a href="{% url 'landing:contacto' %}" class="btn btn-cream-pdf">Contáctanos</a>
         </div>
     </section>
-
-    <!-- FOOTER (Light gray/white background - matches PDF footer) -->
-    <footer class="footer-section-pdf">
-        <div class="container footer-grid-pdf">
-            <div class="footer-col-pdf">
-                <h3>Síguenos</h3>
-                <div class="social-row-pdf">
-                    <a href="#" class="social-circle-pdf">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="#" class="social-circle-pdf">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="social-circle-pdf">
-                        <i class="fa-brands fa-tiktok"></i>
-                    </a>
-                    <a href="#" class="social-circle-pdf">
-                        <i class="fa-brands fa-youtube"></i>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="footer-col-pdf">
-                <ul class="footer-links-pdf">
-                    <li><a href="{% url 'landing:comprar_y_pagar' %}#faqs">Preguntas frecuentes</a></li>
-                    <li><a href="#">Políticas de privacidad</a></li>
-                    <li><a href="#">Políticas de cookies</a></li>
-                    <li><a href="#">Declaración sobre la Ley de Esclavitud Moderna</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col-pdf">
-                <ul class="footer-links-pdf">
-                    <li><a href="#">Términos y condiciones</a></li>
-                    <li><a href="#">Central de Ayuda</a></li>
-                    <li><a href="#">Transparencia</a></li>
-                    <li><a href="#">Libro de reclamaciones</a></li>
-                </ul>
-                <div class="libro-reclamaciones-row-pdf">
-                    <a href="#" class="reclamaciones-link-pdf">
-                        <span class="book-emoji">📖</span>
-                        <span>LIBRO DE RECLAMACIONES</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="footer-col-pdf">
-                <ul class="footer-links-pdf">
-                    <li><a href="{% url 'landing:para_tu_empresa' %}">Integra tu tienda</a></li>
-                    <li><a href="#">Acceso a Empresas</a></li>
-                    <li><a href="#">Canal Ético</a></li>
-                </ul>
-                
-                    <div class="tiny-store-badges">
-
-                        <a href="#" class="tiny-store-badge">
-                            <img src="/static/landing/images/appstore.png"
-                                alt="App Store"
-                                class="tiny-store-img app-store-mini">
-                        </a>
-
-                        <a href="#" class="tiny-store-badge">
-                            <img src="/static/landing/images/googleplay.png"
-                                alt="Google Play"
-                                class="tiny-store-img google-play-mini">
-                        </a>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom-pdf text-center">
-            <p>&copy; 2026 VITPAGO. Todos los derechos reservados. Marca de PagoEfectivo.</p>
-        </div>
-    </footer>
-
-    <!-- CHAT ASSISTANT FLOATING BUTTON -->
-    <div class="chat-widget" id="chat-widget">
-        <button class="chat-toggle-btn" id="chat-toggle-btn" aria-label="Abrir asistente de chat">
-            💬
-            <span class="unread-dot"></span>
-        </button>
-        
-        <div class="chat-panel" id="chat-panel">
-            <div class="chat-header">
-                <div class="agent-avatar">V</div>
-                <div class="agent-status">
-                    <h4>Asistente VITPAGO</h4>
-                    <p>● En línea ahora</p>
-                </div>
-                <button class="close-chat" id="close-chat">&times;</button>
-            </div>
-            
-            <div class="chat-body" id="chat-body">
-                <div class="msg msg-received">
-                    <p>¡Hola! 👋 Bienvenido a VITPAGO. ¿Cómo puedo ayudarte hoy con tu pago o integración?</p>
-                    <span class="msg-time">12:21 PM</span>
-                </div>
-            </div>
-            
-            <div class="chat-footer">
-                <input type="text" id="chat-input" placeholder="Escribe tu mensaje aquí...">
-                <button id="chat-send" aria-label="Enviar mensaje">➤</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Django Static JS -->
-    <script src="{% static 'landing/js/main.js' %}"></script>
-</body>
-</html>
+{% endblock %}
